@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components';
 import { Fade } from "react-reveal";
+import DownArrowImg from "../images/down-arrow.svg"
 
 const Wrap = styled.div`
+position: relative;
 width: 100vw;
 height: 100vh;
 background-size: cover;
 background-repeat: no-repeat;
-background-image: url("/images/${props => props.bgImage}");
 background-position: center;
 display: flex;
 flex-direction: column;
@@ -63,9 +64,11 @@ overflow-x: hidden;
 `
 
 const Section = (props) => {
-    console.log(props)
   return (
-    <Wrap bgImage={props.backgroundImg}>
+    <Wrap style={{
+        backgroundImage: `url(${props.backgroundImg})`
+      }}>
+        
         <Fade bottom>
             <ItemText>
                 <h1>{ props.title }</h1>
@@ -86,7 +89,7 @@ const Section = (props) => {
                 
             </ButtonGroup>
         </Fade>
-        <DownArrow src="/images/down-arrow.svg" />
+        <DownArrow src={DownArrowImg} />
         </Buttons>
     </Wrap>
   )

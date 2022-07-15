@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components';
 import { Menu, Close } from '@material-ui/icons';
+import LogoImg from "../images/logo.svg"
 
 const Container = styled.div`
     min-height: 60px;
@@ -94,7 +95,7 @@ const Header = () => {
   return (
     <Container>
        <a>
-            <img src="/images/logo.svg" alt="" />
+            <img src={LogoImg} alt="" />
        </a>
        <MiddleMenu>
        <a href="#">Model S</a>
